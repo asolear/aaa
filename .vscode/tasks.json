@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build LaTeX with BibTeX",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        // "cd \"${fileDirname}\" && pdflatex \"${fileBasename}\" && bibtex \"${fileBasenameNoExtension}\" && pdflatex \"${fileBasename}\" && pdflatex \"${fileBasename}\""
+        "cd \"${fileDirname}\" && pdflatex \"${fileBasename}\" && pythontex \"${fileBasename}\" && pdflatex \"${fileBasename}\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

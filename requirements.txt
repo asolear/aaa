@@ -1,0 +1,75 @@
+
+# !!! antes las de 
+# !!!!!!!!!!!!!!!! ojo para que funcione pandoc
+#==========================================
+# sudo apt-get install pandoc
+# sudo apt-get install texlive-latex-base
+# sudo apt-get install texlive-latex-extra
+# sudo apt install texlive-lang-spanish
+# sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
+# sudo apt-get install texlive-science
+
+
+# sudo apt-get install graphviz libgraphviz-dev pkg-config
+
+pandoc
+pypandoc
+pandas
+bs4
+jinja2
+# 
+app_utils
+contextily
+fillpdf
+geopandas
+matplotlib
+numpy
+
+requests
+Shapely
+
+tomli
+utm
+
+tabulate
+
+# mkdocs
+
+mkdocs
+mkdocs-material
+openpyxl
+
+# protobuf==3.20.0
+
+unidecode
+
+# scikit-learn
+
+
+
+
+rtree
+
+xlsxwriter
+
+imblearn
+# k_means_constrained
+
+# # !!!!!!!!!!    ojo dependencias para situar los nodos en una posicion especifica
+
+# # sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config
+# networkx
+# ifcopenshell
+#  ojo hacer primero el apt de shell
+# pygraphviz
+pb-tool
+
+#  para hacer grafico tikz en np
+# sudo apt-get install pdf2svg
+# itikz
+
+PyQt5
+
+
+roman
+ruamel.yaml
