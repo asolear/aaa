@@ -7,8 +7,7 @@
       "command": "bash",
       "args": [
         "-c",
-        // "cd \"${fileDirname}\" && pdflatex \"${fileBasename}\" && bibtex \"${fileBasenameNoExtension}\" && pdflatex \"${fileBasename}\" && pdflatex \"${fileBasename}\""
-        "cd \"${fileDirname}\" && pdflatex \"${fileBasename}\" && pythontex \"${fileBasename}\" && pdflatex \"${fileBasename}\""
+        "cd \"${fileDirname}\" && pdflatex \"${fileBasename}\""
       ],
       "group": {
         "kind": "build",

@@ -9,9 +9,3 @@
 \contentsline {section}{\numberline {A}Anexos}{4}{appendix.Alph1}%
 \contentsline {subsection}{\numberline {A.1}Ilustraciones o tablas suplementarias.}{4}{subsection.Alph1.1}%
 \contentsline {subsection}{\numberline {A.2}Descripción de equipos, técnicas o programas de ordenador..}{4}{subsection.Alph1.2}%
-\contentsline {section}{\numberline {B}Distancia mínima entre filas de módulos }{5}{appendix.Alph2}%
-\contentsline {subsection}{\numberline {B.1}Cálculo de Secciones en una Instalación Fotovoltaica con Microinversores}{5}{subsection.Alph2.1}%
-\contentsline {subsubsection}{\numberline {B.1.1}Datos Iniciales}{5}{subsubsection.Alph2.1.1}%
-\contentsline {subsubsection}{\numberline {B.1.2}Cálculo en Corriente Continua (CC)}{6}{subsubsection.Alph2.1.2}%
-\contentsline {subsubsection}{\numberline {B.1.3}Cálculo en Corriente Alterna (CA)}{7}{subsubsection.Alph2.1.3}%
-\contentsline {subsubsection}{\numberline {B.1.4}Resumen}{8}{subsubsection.Alph2.1.4}%
