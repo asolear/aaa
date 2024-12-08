@@ -1,22 +1,66 @@
+\documentclass[a4paper,12pt]{article}
 
-\documentclass{article}
-\newcommand{\path}{../../assets/settings}
-\input{\path/newcommand.tex}
-\input{\path/usepackage.tex}
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{setspace}
+% agregados
+\usepackage{tikz} % Para diagramas
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage{pgfplots}
 
 
-% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+% agregados
 
-\title{Distancia mínima entre filas de módulos}
-\author{Kgnete}
-\date{\today}
+% Configuración de márgenes
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+
+% Estilo de títulos
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Configuración del encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Norma UNE}
+\fancyfoot[C]{\thepage}
+
+% Configuración de interlineado
+\setstretch{1.5}
 
 \begin{document}
 
-\maketitle
+% Portada
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE CalcAE \par}
+    \vspace{1cm}
+    {\Huge\bfseries Título del Documento \par}
+    \vspace{2cm}
+    {\Large Norma UNE XXXX: Año \par}
+    \vspace{1cm}
+    % \includegraphics[width=0.4\textwidth]{logo.png}\par
+    \vfill
+    \textbf{Autor(es):}\par
+    Nombre del Autor 1, Nombre del Autor 2\par
+    \vspace{0.5cm}
+    \textbf{Fecha:} \today \par
+\end{titlepage}
+
+% Índice
+\tableofcontents
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Distancia mínima entre filas de módulos    }
+\section{Distancia mínima entre filas de módulos    }
 \footnote{    IDAE. 
 Instalaciones de
 Energía Solar Fotovoltaica.
@@ -24,6 +68,31 @@ Pliego de Condiciones Técnicas de
 Instalaciones Conectadas a Red
 PCT-C-REV - julio 2011}
 
+% % Datos no numéricos
+% \pgfplotstableread[col sep=comma]{
+%     Característica, Este-Oeste, Incl. Óptima, Horizontal, Sur con Incl. Óptima
+%     Producción de Energía, Media, Alta, Baja, Muy Alta
+%     Uso del Espacio, Alto, Medio, Alto, Medio
+%     Sombra, Baja, Media, N/A, Alta
+%     Facilidad de Instalación, Media, Baja, Alta, Baja
+%     Coste de Instalación, Alta, Baja, Alta, Media
+%     Resistencia al Viento, Media, Alta, Media, Media
+%     Mantenimiento, Media, Media, Alta, Media
+%     Distribución de Producción, Uniforme en día, Pico al mediodía, Baja, Pico al mediodía
+%     Estética e Integración, Media, Alta, Baja, Media
+% }\datosNoNumericos
+
+% Tabla con datos no numéricos
+% \begin{table}[ht]
+%     \centering
+%     \caption{Comparativa de Alternativas para la Disposición de Paneles Solares en la Cubierta}
+%     \pgfplotstabletypeset[
+%         col sep=comma,
+%         every head row/.style={before row=\toprule, after row=\midrule},
+%         every last row/.style={after row=\bottomrule},
+%         string type % Indica que los datos son cadenas de texto
+%     ]{\datosNoNumericos}
+% \end{table}
 
 La distancia d, medida sobre la horizontal, entre filas de módulos o entre una fila y un obstáculo
 de altura h que pueda proyectar sombras, se recomienda que sea tal que se garanticen al menos
@@ -71,19 +140,19 @@ bases de los módulos.
             \draw[thick, fill=gray!30] (0,0) rectangle (\length,0.2);
         \end{scope}
 
-        % Duplicar y rotar la geometría de la placa fotovoltaica
+        % Duplicar y rotar la geometrí$ de la placa fotovoltaica
         \begin{scope}[shift={(\d+1,\h-1.5)}, rotate=\angle]
             \draw[thick, fill=gray!30] (0,0) rectangle (\length,0.2);
         \end{scope}
 
         % Dibujar líneas de medición y etiquetas
-        \draw[<->, thick] (0.5,1.2) -- node[fill=white] {$d_2$} ++(\d-.5,0);
-        \draw[<->, thick] (\d+1,.7) -- node[fill=white] {$d_1$} ++(\d-1,0);
+        \draw[ thick] (0.5,1.2) -- node[fill=white] {$d_2$} ++(\d-.5,0);
+        \draw[thick] (\d+1,.7) -- node[fill=white] {$d_1$} ++(\d-1,0);
         
         % \draw[dashed] (\d+\d, .5) -- (\d+\d,.5);  % Línea auxiliar para mostrar h
-        \draw[<->, thick] (\d+\d-.6,1.5) -- node[fill=white, right] {$h_1$} ++(0,-1);
+        \draw[thick] (\d+\d-.6,1.5) -- node[fill=white, right] {$h_1$} ++(0,-1);
 
-        \draw[<->, thick] (\d-.7,1) -- node[fill=white, right] {$h_2$} ++(0,.8);
+        \draw[thick] (\d-.7,1) -- node[fill=white, right] {$h_2$} ++(0,.8);
 
         % Etiquetas de las figuras
         \node at (5,-1.5) {Fig. 7};
@@ -97,13 +166,6 @@ entre filas deberá efectuarse mediante la ayuda de un programa de sombreado par
 generales suficientemente fiable, a fin de que se cumplan las condiciones requeridas.
 
 
-
-
-\ifdefined\inputado % para que no meta la bibliografia de los parciales al inclustarlo con input en otro
-\else
-\bibliographystyle{plainnat}
-\bibliography{\path/referencias}
-\fi
 
 
 
