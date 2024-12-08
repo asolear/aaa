@@ -7,7 +7,7 @@
 \usepackage{titlesec}
 \usepackage{geometry}
 \usepackage{fancyhdr}
-\usepackage{hyperref}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
 \usepackage{setspace}
 % agregados
 \usepackage{tikz} % Para diagramas
@@ -19,7 +19,10 @@
 \usepackage{fancyhdr} % Para personalizar encabezados y pies de página
 \usepackage{pgfplotstable}
 \usepackage{booktabs}
-
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
 % 
 % Configuración de márgenes
 \geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
@@ -31,13 +34,15 @@
 % Configuración del encabezado y pie de página
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{Norma UNE}
+\fancyhead[L]{}
 \fancyfoot[C]{\thepage}
 
 % Configuración de interlineado
 \setstretch{1.5}
 
 \begin{document}
+\begin{Form}
+
 
 % Portada
 \begin{titlepage}
@@ -123,7 +128,7 @@ En esta sección se incluyen tablas, gráficos, cálculos o documentos adicional
 % Datos no numéricos
 \pgfplotstableread[col sep=comma]{
     Nombre dd dasdAS Asdas,Color,Forma
-    Manzana,Rojo,{\TextField[name=Tecnico,width=6cm]{}}
+    Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
     Plátano,Amarillo,Alargada
     Uva,Morado,Pequeña
     Limón,Verde,Ovalada
@@ -153,4 +158,5 @@ En esta sección se incluyen tablas, gráficos, cálculos o documentos adicional
     \item Norma UNE XXXX: Año. Título de la norma.
 \end{itemize}
 
+\end{Form}
 \end{document}
