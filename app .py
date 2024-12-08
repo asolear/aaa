@@ -161,7 +161,7 @@ class _00_MKDOCS:
                 rf"""
 # {nombre}
 
-<iframe src="../{nombre}.pdf" width="100%" height="1000px"></iframe>
+<iframe src="../{nombre}.pdf" width="100%" height="1500px"></iframe>
 
 """
             )

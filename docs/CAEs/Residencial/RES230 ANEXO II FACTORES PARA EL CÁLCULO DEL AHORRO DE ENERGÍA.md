@@ -1,5 +1,5 @@
 
 # RES230 ANEXO II FACTORES PARA EL CÁLCULO DEL AHORRO DE ENERGÍA
 
-<iframe src="../RES230 ANEXO II FACTORES PARA EL CÁLCULO DEL AHORRO DE ENERGÍA.pdf" width="100%" height="1000px"></iframe>
+<iframe src="../RES230 ANEXO II FACTORES PARA EL CÁLCULO DEL AHORRO DE ENERGÍA.pdf" width="100%" height="1500px"></iframe>
 
