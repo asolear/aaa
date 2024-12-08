@@ -1,15 +1,149 @@
-\documentclass[conference,12pt]{IEEEtran}
-\newcommand{\camino}{../../../assets/settings}
-\input{\camino/newcommand.tex}
-\input{\camino/preambuloUNE.tex}
-% \input{\camino/preambulo.tex}
-\usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+\input{../../../assets/settings/newcommand.tex}
 
-\title{Diseno del campo fotovoltaico}
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+\usepackage{amsmath} % For mathematical equations
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+
+% 
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+\setstretch{1.5}
 \begin{document}
-\maketitle
-\cuadroPortada
+\begin{Form}
+
+
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE CalcAE \par}
+    \vspace{1cm}
+    {\Huge\bfseries Informe Técnico\par}
+    \vspace{2cm}
+    {\Large Norma UNE XXXX: Año \par}
+    \vspace{1cm}
+    % \includegraphics[width=0.4\textwidth]{logo.png}\par
+    \vfill
+    \textbf{Autor(es):}\par
+    Nombre del Autor 1,\TextField[name=Tecnico,width=4cm,default=Juan Pérez]{} 2\par
+    \vspace{0.5cm}
+    \textbf{Fecha:} \today \par
+\end{titlepage}
+
+\tableofcontents
 \newpage
+
+\section{Introducción}
+En esta sección se describe el propósito del documento y su alcance. También se puede incluir información general y antecedentes necesarios para entender el contenido.
+
+\section{Objeto y Campo de Aplicación}
+Definir de forma clara y concisa el propósito principal del documento y los límites de su aplicación.
+
+\section{Normas y Referencias Aplicables}
+Enumerar las normas, reglamentos y documentos de referencia utilizados.
+
+\section{Definiciones y Abreviaturas}
+Listar y definir términos importantes o abreviaturas empleadas en el documento.
+
+\section{Metodología}
+Describir el método o procedimiento seguido. Esto debe estar en concordancia con los estándares aplicables.
+
+\section{Resultados}
+Exponer los resultados obtenidos. Utiliza tablas o gráficos si es necesario.
+
+\section{Conclusiones y Recomendaciones}
+Presentar las conclusiones principales y sugerir posibles acciones o estudios futuros.
+
+\appendix
+\section{Anexos}
+En esta sección se incluyen tablas, gráficos, cálculos o documentos adicionales que complementan el contenido principal.
+
+
+\subsection{graficos}
+
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+
+
+\pgfplotstableread[col sep=comma]{
+    Nombre dd dasdAS Asdas,Color,Forma
+    Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
+    Plátano,Amarillo,Alargada
+    Uva,Morado,Pequeña
+    Limón,Verde,Ovalada
+    Naranja,Naranja,Redonda
+}\datosNoNumericos
+
+\begin{table}[ht]
+    \centering
+    \caption{Una Tabla de ejemplo}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+\newpage
+\section*{Bibliografía}
+\begin{itemize}
+    \item Título del libro/artículo/documento. Autor(es). Año.
+    \item Norma UNE XXXX: Año. Título de la norma.
+\end{itemize}
+
+
+
 
 \subsection{Diseno del campo fotovoltaico }
 \footnote{    IDAE. 
@@ -20,7 +154,7 @@ Instalaciones Conectadas a Red
 PCT-C-REV - julio 2011
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}[x=0.01cm, y=0.4cm]
 
@@ -68,10 +202,5 @@ PCT-C-REV - julio 2011
 
 
 
-
-\ifdefined\inputado % para que no meta la bibliografia de los parciales al inclustarlo con input en otro
-\else
-\bibliographystyle{plainnat}
-\bibliography{\path/referencias}
-\fi
+\end{Form}
 \end{document}

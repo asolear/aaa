@@ -1,0 +1,81 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{lipsum}
+
+\title{Informe Técnico sobre las Pérdidas por Inclinación y Orientación en una Instalación Fotovoltaica}
+\author{Autor del Informe}
+\date{Fecha del Informe}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+El objetivo de este informe técnico es analizar el impacto de la inclinación y la orientación en las pérdidas de rendimiento de una instalación fotovoltaica. La eficiencia de un sistema fotovoltaico depende en gran medida de la correcta orientación de los paneles solares, así como de su ángulo de inclinación respecto al plano horizontal.
+
+Las condiciones óptimas de orientación e inclinación pueden variar en función de la ubicación geográfica, la estación del año y las características específicas del lugar de instalación. Este informe aborda cómo estas variables afectan la eficiencia y la generación de energía de una instalación fotovoltaica.
+
+\section{Fundamentos de la Energía Fotovoltaica}
+
+La energía fotovoltaica se genera mediante paneles solares que convierten la radiación solar en energía eléctrica. El rendimiento de los paneles solares depende de la cantidad de energía solar que incide sobre ellos, lo cual está influenciado por dos factores principales:
+\begin{itemize}
+    \item \textbf{Inclinación}: El ángulo con el que los paneles están inclinados respecto al plano horizontal.
+    \item \textbf{Orientación}: El ángulo de los paneles con respecto al sur (en el hemisferio norte) o al norte (en el hemisferio sur).
+\end{itemize}
+
+\section{Impacto de la Inclinación en la Generación de Energía}
+
+La inclinación de los paneles solares afecta significativamente la cantidad de energía que reciben de la radiación solar durante el día. El ángulo de inclinación óptimo depende de la latitud geográfica y de las estaciones del año.
+
+\subsection{Cálculo del Ángulo de Inclinación Óptimo}
+
+El ángulo de inclinación óptimo puede ser calculado mediante la fórmula empírica:
+
+\begin{equation}
+    \theta_{óptimo} = \text{Latitud} \pm 15^\circ
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item La latitud corresponde a la ubicación geográfica del sitio.
+    \item El signo positivo o negativo depende de la estación del año (en invierno se utiliza el signo negativo y en verano el positivo).
+\end{itemize}
+
+Un ángulo de inclinación más pronunciado aumenta la captura de radiación solar en invierno, pero reduce la eficiencia en verano debido a un mayor ángulo de incidencia.
+
+\section{Impacto de la Orientación en la Generación de Energía}
+
+La orientación de los paneles solares también tiene un papel crucial en la captura de energía solar. En el hemisferio norte, se recomienda que los paneles estén orientados hacia el sur para maximizar la captación de radiación durante todo el año.
+
+\subsection{Cálculo del Ángulo de Orientación Óptimo}
+
+El ángulo de orientación óptimo para una ubicación en el hemisferio norte es 0°, es decir, directamente hacia el sur. En otros casos, la orientación puede variar dependiendo de las condiciones particulares del sitio de instalación, tales como sombras o la proximidad de otros edificios.
+
+\section{Pérdidas por Inclinación y Orientación}
+
+Las pérdidas debidas a una mala inclinación y orientación pueden ser significativas. Si los paneles no están correctamente alineados, la cantidad de radiación solar que incide sobre ellos disminuye, lo que reduce la eficiencia global de la instalación.
+
+Se puede calcular el impacto de estas pérdidas mediante simulaciones de radiación solar o mediante tablas de pérdidas, que proporcionan la eficiencia del sistema en función de la inclinación y la orientación.
+
+\subsection{Ejemplo de Cálculo de Pérdidas por Inclinación y Orientación}
+
+Para una instalación fotovoltaica ubicada en una latitud de 40°N, si los paneles están orientados al sur y tienen un ángulo de inclinación de 25°, las pérdidas por inclinación y orientación pueden ser estimadas usando tablas y cálculos de radiación.
+
+\begin{equation}
+    P_{\text{pérdidas}} = \left(1 - \frac{I_{\text{real}}}{I_{\text{óptimo}}}\right) \times 100
+\end{equation}
+
+Donde \( I_{\text{real}} \) es la radiación recibida en la instalación con la inclinación y orientación actuales, e \( I_{\text{óptimo}} \) es la radiación recibida con la orientación e inclinación óptimas.
+
+\section{Conclusión}
+
+La orientación y la inclinación son factores determinantes en el rendimiento de una instalación fotovoltaica. Un correcto ajuste de estos parámetros puede reducir significativamente las pérdidas de eficiencia y mejorar la producción de energía durante todo el año. Es esencial tener en cuenta tanto la latitud geográfica como las condiciones climáticas locales para optimizar estos factores y maximizar la rentabilidad de la instalación fotovoltaica.
+
+\end{document}

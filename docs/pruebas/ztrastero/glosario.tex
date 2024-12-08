@@ -1,0 +1,51 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{glossaries}
+
+% Configuración del glosario
+\makeglossaries
+
+% Definición de términos
+\newglossaryentry{une}{
+    name=UNE,
+    description={Norma Española de carácter técnico}
+}
+\newglossaryentry{latex}{
+    name=LaTeX,
+    description={Sistema de preparación de documentos basado en TeX}
+}
+\newglossaryentry{pdf}{
+    name=PDF,
+    description={Formato de Documento Portátil (Portable Document Format)}
+}
+
+\begin{document}
+
+\title{Documento Ejemplo según Norma UNE}
+\author{Autor del Documento}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\section*{Glosario de signos, símbolos, unidades, abreviaturas, acrónimos o términos}
+\glsaddall % Incluye todos los términos definidos
+\printglossary % Imprime el glosario
+
+NO FUNCIONA
+
+\section*{Glosario de signos, símbolos, unidades, abreviaturas, acrónimos o términos}
+
+\begin{description}
+  \item[LaTeX] Sistema de preparación de documentos basado en texto, utilizado para crear documentos de alta calidad tipográfica.
+  \item[PDF] Formato de archivo para documentos que preserva el formato y es independiente del software, hardware o sistema operativo utilizado.
+  \item[UNE] Normas técnicas desarrolladas por la Asociación Española de Normalización y Certificación.
+  \item[HTML] Lenguaje de marcado utilizado para la creación de páginas web.
+  \item[CSS] Lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML.
+  \item[XML] Lenguaje de marcado que define reglas para la codificación de documentos en un formato legible por humanos y máquinas.
+\end{description}
+\section{Introducción}
+En este documento se explican conceptos como \gls{une}, \gls{latex} y \gls{pdf}.
+
+\end{document}
