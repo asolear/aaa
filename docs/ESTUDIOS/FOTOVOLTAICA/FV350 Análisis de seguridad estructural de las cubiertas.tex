@@ -11,7 +11,6 @@
 \usepackage{titlesec}
 \usepackage{geometry}
 \usepackage{fancyhdr}
-\usepackage[pdftex,pdfencoding=auto]{hyperref}
 \usepackage{setspace}
 \usepackage{tikz} % Para diagramas
 \usepackage{amsmath} % For mathematical equations
@@ -27,6 +26,7 @@
 \usepackage{circuitikz}
 \usepackage{glossaries} % Paquete para glosarios
 % 
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
 \let\OldTextField\TextField
 \renewcommand{\TextField}[2][]{%
   \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
@@ -40,22 +40,6 @@
 \fancyfoot[C]{\thepage}
 \setstretch{1.5}
 
-% Configuración del glosario
-\makeglossaries
-
-% Definición de términos
-\newglossaryentry{une}{
-    name=UNE,
-    description={Norma Española de carácter técnico}
-}
-\newglossaryentry{latex}{
-    name=LaTeX,
-    description={Sistema de preparación de documentos basado en TeX}
-}
-\newglossaryentry{pdf}{
-    name=PDF,
-    description={Formato de Documento Portátil (Portable Document Format)}
-}
 
 \begin{document}
 \begin{Form}
@@ -75,10 +59,10 @@
     \vspace{1cm}
     % \includegraphics[width=0.4\textwidth]{logo.png}\par
     \vfill
-    \textbf{Autor(es):}\par
-    Nombre del Autor 1,\TextField[name=Tecnico,width=4cm,default=Juan Pérez]{} 2\par
-    \vspace{0.5cm}
-    \textbf{Fecha:} \today \par
+    Autor: \TextField[name=Tecnico,width=6cm,default=Juan Pérez]{} \par
+    Organización: \TextField[name=Organizacion,width=6cm,default=CalcAE]{} \par
+    NIF: \TextField[name=NIF,width=6cm,default=12345678]{} \par
+    Fecha:  NIF: \TextField[name=Fecha,width=6cm,default=\today]{} \par
 \end{titlepage}
 % Configuración del glosario
 
@@ -111,7 +95,6 @@
 
 \section{Introducción}
 En esta sección se describe el propósito del documento y su alcance. También se puede incluir información general y antecedentes necesarios para entender el contenido.
-En este documento se explican conceptos como \gls{une}, \gls{latex} y \gls{pdf}.
 
 \section{Objeto y Campo de Aplicación}
 Definir de forma clara y concisa el propósito principal del documento y los límites de su aplicación.

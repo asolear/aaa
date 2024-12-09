@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.27)  9 DEC 2024 00:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.27)  9 DEC 2024 00:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/pk/Desktop/aaa/docs/ESTUDIOS/RECARGA VEHICULO ELECTRICO/CAPACIDAD DISPONIBLE "
-(/home/pk/Desktop/aaa/docs/ESTUDIOS/RECARGA VEHICULO ELECTRICO/CAPACIDAD DISPONIBLE .tex
+**"/home/pk/Desktop/aaa/docs/ESTUDIOS/RECARGA VEHICULO ELECTRICO/Recarga Ultrarrápida de Vehículo Eléctrico: Características"
+(/home/pk/Desktop/aaa/docs/ESTUDIOS/RECARGA VEHICULO ELECTRICO/Recarga Ultrarrápida de Vehículo Eléctrico: Características.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (../../../assets/settings/newcommand.tex) (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -940,7 +940,7 @@ Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
 \c@currfiledepth=\count406
 )
 \pytx@codefile=\write6
-\openout6 = `"CAPACIDAD DISPONIBLE .pytxcode"'.
+\openout6 = `"Recarga Ultrarrápida de Vehículo Eléctrico: Características.pytxcode"'.
 
 \c@pytx@FancyVerbLineTemp=\count407
 \c@pytx@py@default@default=\count408
@@ -949,11 +949,11 @@ Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
 \c@pytx@sympycon@default@default=\count411
 \c@pytx@pylab@default@default=\count412
 \c@pytx@pylabcon@default@default=\count413
-) (./CAPACIDAD DISPONIBLE .aux
+) (./Recarga Ultrarrápida de Vehículo Eléctrico: Características.aux
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
-\openout1 = `"CAPACIDAD DISPONIBLE .aux"'.
+\openout1 = `"Recarga Ultrarrápida de Vehículo Eléctrico: Características.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
@@ -1041,9 +1041,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 49.
 LaTeX Info: Redefining \pageref on input line 49.
 LaTeX Info: Redefining \nameref on input line 49.
- (./CAPACIDAD DISPONIBLE .out) (./CAPACIDAD DISPONIBLE .out)
+ (./Recarga Ultrarrápida de Vehículo Eléctrico: Características.out) (./Recarga Ultrarrápida de Vehículo Eléctrico: Características.out)
 \@outlinefile=\write7
-\openout7 = `"CAPACIDAD DISPONIBLE .out"'.
+\openout7 = `"Recarga Ultrarrápida de Vehículo Eléctrico: Características.out"'.
 
 
 
@@ -1058,7 +1058,7 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-No file pythontex-files-CAPACIDAD-DISPONIBLE-/CAPACIDAD-DISPONIBLE-.pytxmcr.
+No file pythontex-files-Recarga-Ultrarrápida-de-Vehículo-Eléctrico:-Características/Recarga-Ultrarrápida-de-Vehículo-Eléctrico:-Características.pytxmcr.
 Run PythonTeX to create it.
 Package newfloat Info: New float `listing' with options `fileext=lopytx' on input line 49.
 \c@listing=\count421
@@ -1075,43 +1075,47 @@ File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) [1
 
-] (./CAPACIDAD DISPONIBLE .toc
+] (./Recarga Ultrarrápida de Vehículo Eléctrico: Características.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write8
-\openout8 = `"CAPACIDAD DISPONIBLE .toc"'.
+\openout8 = `"Recarga Ultrarrápida de Vehículo Eléctrico: Características.toc"'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.89   \item[PDF]
-                  Formato de archivo para documentos que preserva el formato... [1] [2] [3] [4]
-<../../../assets/imgs/fvresidencial.jpg, id=100, 642.4pt x 481.8pt>
+l.87   \item[UNE]
+                  Normas técnicas desarrolladas por la Asociación Español... [1] [2] [3]
+<../../../assets/imgs/fvresidencial.jpg, id=98, 642.4pt x 481.8pt>
 File: ../../../assets/imgs/fvresidencial.jpg Graphic file (type jpg)
 <use ../../../assets/imgs/fvresidencial.jpg>
-Package pdftex.def Info: ../../../assets/imgs/fvresidencial.jpg  used on input line 196.
+Package pdftex.def Info: ../../../assets/imgs/fvresidencial.jpg  used on input line 174.
 (pdftex.def)             Requested size: 352.81552pt x 264.61588pt.
- [5 <../../../assets/imgs/fvresidencial.jpg>] (./CAPACIDAD DISPONIBLE .aux
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5 <../../../assets/imgs/fvresidencial.jpg>] [6] (./Recarga Ultrarrápida de Vehículo Eléctrico: Características.aux
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
-Package rerunfilecheck Info: File `"CAPACIDAD DISPONIBLE ".out' has not changed.
-(rerunfilecheck)             Checksum: 5F22AB81785B0BAB2AC504BD4BFC82F7;710.
+Package rerunfilecheck Info: File `"Recarga Ultrarrápida de Vehículo Eléctrico: Características".out' has not changed.
+(rerunfilecheck)             Checksum: 71192C68EB11BFE9D9573AB8E4A771E5;811.
  ) 
 Here is how much of TeX's memory you used:
- 67416 strings out of 480112
- 1707531 string characters out of 5892631
- 2387320 words of memory out of 5000000
- 84493 multiletter control sequences out of 15000+600000
+ 67420 strings out of 480112
+ 1709084 string characters out of 5892631
+ 2385754 words of memory out of 5000000
+ 84495 multiletter control sequences out of 15000+600000
  482983 words of font info for 55 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
- 91i,12n,91p,1674b,2256s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 91i,12n,91p,1716b,2257s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on "CAPACIDAD DISPONIBLE .pdf" (6 pages, 255488 bytes).
+Output written on "Recarga Ultrarrápida de Vehículo Eléctrico: Características.pdf" (7 pages, 259086 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 441 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 

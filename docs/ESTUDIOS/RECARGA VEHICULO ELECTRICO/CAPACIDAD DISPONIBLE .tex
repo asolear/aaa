@@ -62,10 +62,10 @@
     \vspace{1cm}
     % \includegraphics[width=0.4\textwidth]{logo.png}\par
     \vfill
-    \textbf{Autor(es):}\par
-    Nombre del Autor 1,\TextField[name=Tecnico,width=4cm,default=Juan Pérez]{} 2\par
-    \vspace{0.5cm}
-    \textbf{Fecha:} \today \par
+    Autor: \TextField[name=Tecnico,width=6cm,default=Juan Pérez]{} \par
+    Organización: \TextField[name=Organizacion,width=6cm,default=CalcAE]{} \par
+    NIF: \TextField[name=NIF,width=6cm,default=12345678]{} \par
+    Fecha:  NIF: \TextField[name=Fecha,width=6cm,default=\today]{} \par
 \end{titlepage}
 % Configuración del glosario
 
@@ -190,12 +190,14 @@ tomado los valores máximos para cada periodo horario del coeficiente de perfila
 año 2015. Estos valores, ajustados en base 100 para el valor máximo de dicho coeficiente horario, han sido
 representados en la siguiente gráfica
 
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{fvresidencial.jpg} % Ajusta la ruta y el tamaño según tus necesidades
     \caption{Emplazamiento geográfico.}
     \label{fig:etiqueta}
   \end{figure}
+
 
 De esta manera, se obtiene el ratio horario de uso de la capacidad disponible por un consumidor doméstico.
 Suponiendo que los VE fuera programados para que iniciaran su carga a partir de la 1 de la mañana (hora de inicio
