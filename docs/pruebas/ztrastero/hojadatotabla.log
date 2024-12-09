@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.27)  9 DEC 2024 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.27)  9 DEC 2024 12:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -859,21 +859,11 @@ File: upzd.fd 2001/06/04 font definitions for U/pzd.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 45.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 55--56
-[][][][] 
- []
-
-(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
-Overfull \hbox (37.47214pt too wide) in paragraph at lines 59--62
-[][] [][][] [] 
- []
-
-
-Overfull \hbox (37.47214pt too wide) in paragraph at lines 68--71
-[][] [][][] [] 
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 56--60
+[][][][] [][][][] 
  []
 
 [1
@@ -881,7 +871,7 @@ Overfull \hbox (37.47214pt too wide) in paragraph at lines 68--71
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 \end{titlepage}
+l.81 \end{titlepage}
                      [1] (./hojadatotabla.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -892,12 +882,12 @@ LaTeX Info: Redefining \% on input line 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.108   \item[PDF]
+l.101   \item[PDF]
                    Formato de archivo para documentos que preserva el format... [1] [2] [3]
-<../../../assets/imgs/fvresidencial.jpg, id=103, 642.4pt x 481.8pt>
+<../../../assets/imgs/fvresidencial.jpg, id=102, 642.4pt x 481.8pt>
 File: ../../../assets/imgs/fvresidencial.jpg Graphic file (type jpg)
 <use ../../../assets/imgs/fvresidencial.jpg>
-Package pdftex.def Info: ../../../assets/imgs/fvresidencial.jpg  used on input line 196.
+Package pdftex.def Info: ../../../assets/imgs/fvresidencial.jpg  used on input line 189.
 (pdftex.def)             Requested size: 352.81552pt x 264.61588pt.
 
 
@@ -911,18 +901,18 @@ Package rerunfilecheck Info: File `hojadatotabla.out' has not changed.
 (rerunfilecheck)             Checksum: 5F22AB81785B0BAB2AC504BD4BFC82F7;710.
  ) 
 Here is how much of TeX's memory you used:
- 55351 strings out of 480112
- 1371638 string characters out of 5892631
- 2013531 words of memory out of 5000000
- 72553 multiletter control sequences out of 15000+600000
+ 55348 strings out of 480112
+ 1371602 string characters out of 5892631
+ 2013399 words of memory out of 5000000
+ 72550 multiletter control sequences out of 15000+600000
  482877 words of font info for 54 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
- 91i,12n,91p,1208b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 91i,11n,91p,1208b,2273s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/pk/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on hojadatotabla.pdf (7 pages, 253895 bytes).
+Output written on hojadatotabla.pdf (7 pages, 253823 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 429 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  19 named destinations out of 1000 (max. 500000)
  132 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -27,10 +27,10 @@
 \usepackage{glossaries} % Paquete para glosarios
 % 
 \usepackage[pdftex,pdfencoding=auto]{hyperref}
-\let\OldTextField\TextField
-\renewcommand{\TextField}[2][]{%
-  \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
-}
+% \let\OldTextField\TextField
+% \renewcommand{\TextField}[2][]{%
+%   \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+% }
 \geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
 \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
@@ -50,26 +50,19 @@
 \begin{center}
     \Large \textbf{HOJA DE DATOS DEL DOCUMENTO}
 \end{center}
+% 
 
-\vspace{1cm}
-\textcolor{gray!30}{\rule{\textwidth}{0.05pt}}
+\def\h{2}
+Promotor \hspace{6cm} Segundo texto\\[0.05em]
+\TextField[multiline=true, bordercolor=gray!30,name=beee,width=0.5\textwidth,height=\h cm,default=boo]{}
+\TextField[multiline=true, bordercolor=gray!30,name=beee,width=0.5\textwidth,height=\h cm,default=boo]{}
+% 
 
-Primer texto \hspace{6cm} Segundo texto
-
-\TextField[multiline=true,name=beee,width=8cm,height=2cm,default=boo]{}
-\textcolor{gray!30}{\rule{0.4pt}{2.5cm}}
-\TextField[multiline=true,name=beee,width=8cm,height=2cm,default=boo]{}
-
-
-
-
-Primer texto \hspace{6cm} Segundo texto
-
-\TextField[multiline=true,name=beee,width=8cm,height=2cm,default=boo]{}
-\textcolor{gray!30}{\rule{0.4pt}{2.5cm}}
-\TextField[multiline=true,name=beee,width=8cm,height=2cm,default=boo]{}
-
-
+% 
+Titulo  \\
+\def\h{1}
+\TextField[multiline=true, bordercolor=gray!30,name=beee,width=1\textwidth,height=\h cm,default=boo]{}
+% 
 
 \begin{titlepage}
     \centering
