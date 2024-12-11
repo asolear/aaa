@@ -1,0 +1,504 @@
+\newcommand{\titulo}{titulo del documento}
+% Datos del título
+\title{Informe Técnico sobre Pérdidas por Inclinación y Orientación en Instalaciones Fotovoltaicas}
+\author{Juan Pérez}
+\date{\today}
+
+
+\newcommand{\figuraDatosCSV}{
+\subsection{Ilustraciones o tablas suplementarias.}
+% \pgfplotstableread[col sep=comma]{
+%     x,y
+%     1,.2
+%     2,.3
+%     3,.5
+%     4,.7
+%     5,.11
+% }\misdatos
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+}
+
+
+\newcommand{\cubierta}{
+\pagestyle{empty} % Sin numeración de página
+\begin{tikzpicture}[remember picture, overlay]
+    % Línea negra vertical centrada en la página
+    \draw[line width=4mm, gray!80]  ([xshift=-6cm]current page.north) -- ([xshift=-6cm]current page.south);
+    % Línea negra horizontal centrada en la página
+    \draw[line width=40mm, gray!30] ([yshift=10cm]current page.west) -- ([yshift=10cm]current page.east);
+     % Inserta aquí el enlace o texto que desees codificar
+\end{tikzpicture}
+% 
+
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[line width=14mm,white] ([xshift=4.5cm, yshift=24.8cm]current page.south west) circle (2.3cm); % Dibuja un círculo con radio de 1cm
+\end{tikzpicture}
+% 
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=2.80cm, yshift=24.0cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \textcolor{gray}{{\textbf{ \scalebox{4.5}{$\mathcal{RG}$}}}}
+        \end{minipage}
+    };
+\end{tikzpicture}
+% 
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=15cm, yshift=24cm]current page.south west) {%
+        \begin{minipage}{4cm} 
+            \textbf{ID: 987654321} 
+        \end{minipage}
+    };
+\end{tikzpicture}
+% 
+% \begin{tikzpicture}[remember picture, overlay]
+    
+%     \node[anchor=south west] at ([xshift=15cm, yshift=24cm]current page.south west) {%
+%         \begin{minipage}{6cm} 
+%             \textbf{ELTON-TadADS-54} \\ 
+%         \end{minipage}
+%     };
+% \end{tikzpicture}
+% % 
+
+% Identificador en la esquina superior izquierda (de arriba hacia abajo)
+\begin{tikzpicture}[remember picture, overlay]
+    \node[rotate=-90, anchor=north] at ([xshift=1cm, yshift=-5cm]current page.north west) {
+        \bfseries\footnotesize ID: 987654321
+    };
+\end{tikzpicture}
+
+% % Identificador en la esquina superior izquierda (de arriba hacia abajo)
+% \begin{tikzpicture}[remember picture, overlay]
+%     \node[rotate=90, anchor=north] at ([xshift=1cm, yshift=-5cm]current page.north west) {
+%         \bfseries\footnotesize ID: 987654321
+%     };
+% \end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[rotate=0, anchor=north] at ([xshift=1cm, yshift=-5cm]current page.north west) {
+        \bfseries\footnotesize \begin{tikzpicture}[remember picture, overlay]
+            \node[rotate=-90, anchor=north] at ([xshift=1cm, yshift=-5cm]current page.north west) {
+                \bfseries\footnotesize ID: 987654321
+            };
+        \end{tikzpicture}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[rotate=0, anchor=north] at ([xshift=1cm, yshift=-5cm]current page.north west) {
+        \bfseries\footnotesize \begin{tikzpicture}[remember picture, overlay]
+            \node[rotate=90, anchor=north] at ([xshift=1cm, yshift=-5cm]current page.north west) {
+                \bfseries\footnotesize ID: 987654321
+            };
+        \end{tikzpicture}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=4cm, yshift=18cm]current page.south west) {%
+    \fcolorbox{white}{white}{%
+        \begin{minipage}{6cm} 
+            \textbf{
+                Nombre y dirección de la organización responsable} \\ 
+        \end{minipage}
+    }
+    };
+\end{tikzpicture}
+% 
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=7cm, yshift=10cm]current page.south west) {%
+        \begin{minipage}{11cm} 
+            \centering
+            \textbf{\huge \titulo} \\[1em]
+            \proyectoautor\\[3em]
+            \today
+        \end{minipage}
+    };
+\end{tikzpicture}
+% 
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=18cm, yshift=1cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \qrcode{https://www.ibercae.es}
+        \end{minipage}
+    };
+\end{tikzpicture}
+% 
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=4cm, yshift=4cm]current page.south west) {%
+    \fcolorbox{white}{white}{%
+        \begin{minipage}{8cm}
+            {\footnotesize \copyright
+            Copyright 2025 por , todos los derechos reservados.  
+            Prohibido reproducir total o parcialmente este documento sin el consentimiento del autor.}
+        \end{minipage}
+    }
+    };
+\end{tikzpicture}
+% 
+}
+
+
+
+\newcommand{\portada}{
+    \begin{titlepage}
+        \newgeometry{top=3cm,bottom=3cm,left=2.5cm,right=2.5cm} % Ajuste de márgenes
+        \centering
+        
+        % Restricciones de distribución o clasificación de seguridad
+        % {\Large\textbf{\textcolor{gray}{Clasificación de Seguridad: Pública}}}\\[1cm]
+        
+        % Identificadores
+        {\large\textbf{ID del Informe: 12345}}\\[3cm]
+        % {\large\textbf{ISSN: 1234-5678 \quad ISBN: 978-1-234-56789-0}}\\[1cm]
+        
+        % Nombre y dirección del organismo responsable
+        {\Large\textbf{Organización Responsable}}\\[0cm]
+        {\normalsize Calle Ejemplo, 123, Ciudad, País}\\[6cm]
+        
+        % Título y subtítulo
+        {\Huge\textbf{\@title}}\\[0.5cm]
+        {\Large\textbf{\@subtitle}}\\[6cm]
+        
+        % Autor y afiliación
+        {\large\textbf{Autor: Juan Pérez}}\\
+        {\normalsize Universidad Ejemplo, Facultad de Ingeniería}\\[1cm]
+        
+        % Fecha de publicación
+        {\large\textbf{Fecha de publicación: \today}}\\
+        % {\large\textbf{Fecha de prioridad del autor: (2024)}}\\[3cm]
+        
+        \vfill
+        % Pie de página opcional
+        % {\small Documento preparado siguiendo la norma UNE.}
+        \restoregeometry
+    \end{titlepage}
+}
+\makeatother
+
+
+\newcommand{\resumen}{  
+    \newpage
+    \begin{center}
+        \textbf{\huge Resumen}
+    \end{center} 
+
+El texto del resumen debe estar de acuerdo con la Norma UNE 50103. En síntesis, debe ser tan informativo como lo
+permita la naturaleza del documento, para que los lectores puedan decidir si es necesario leer el documento completo;
+debe definir el objetivo, métodos, resultados y conclusiones presentadas en el documento original, bien en ese orden,
+o destacando inicialmente los resultados y conclusiones; debe constituir un texto completo, para que sea inteligible sin
+necesidad de referirse al documento. Debe ser conciso sin ser oscuro, reteniendo la información básica y el carácter
+del documento original. Los resúmenes de la mayoría de los informes deben tener menos de 250 palabras y en ningún
+caso más de 500; Deben estar escritos en un solo párrafo; emplear normalmente frases completas, verbos en forma
+activa y con tercera persona. No se deben utilizar figuras y símbolos, tales como tablas cortas y fórmulas, más que
+cuando no haya ninguna alternativa aceptable.}
+
+\newcommand{\glosario}{
+    \section*{Glosario de términos}
+    \begin{description}
+      \item[LaTeX] Sistema de preparación de documentos basado en texto, utilizado para crear documentos de alta calidad tipográfica.
+      \item[PDF] Formato de archivo para documentos que preserva el formato y es independiente del software, hardware o sistema operativo utilizado.
+      \item[UNE] Normas técnicas desarrolladas por la Asociación Española de Normalización y Certificación.
+      \item[HTML] Lenguaje de marcado utilizado para la creación de páginas web.
+      \item[CSS] Lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML.
+      \item[XML] Lenguaje de marcado que define reglas para la codificación de documentos en un formato legible por humanos y máquinas.
+    \end{description}
+    \newpage
+}
+\newcommand{\prefacio}{}
+
+\newcommand{\Introduccion}{
+    \newpage
+
+    \section{Introducción}
+Cada informe debe comenzar con una introducción que establezca brevemente el campo de aplicación y los objetivos
+del trabajo descrito, su relación con otros trabajos y el enfoque general. No debe repetir o parafrasear el resumen, ni
+dar detalles de la teoría experimental, método o resultados, ni anticipar las conclusiones o recomendaciones. Si no hay
+un prefacio separado, la información que podría figurar en el prefacio, puede incluirse en la introducción. La
+introducción no forma parte del texto principal del informe, y no debe numerarse excepto, con la cifra 0 (cero), si se
+desea [véase la Norma ISO 2145].}
+
+\newcommand{\NucleoDelInformeConIlustracionesYTablas}{
+    \section{Núcleo del informe, con ilustraciones y tablas}
+    El núcleo del informe debería dividirse en capítulos numerados que cubran aspectos tales como teoría, método,
+    resultados y discusión.
+    
+    A menudo es conveniente dividir los capítulos en apartados y estos en subapartados, cada uno con su propio enca-
+    bezamiento (véase tabla 1). Normalmente no se recomiendan más subdivisiones excepto para numerar los compo-
+    nentes de una lista. La numeración de los capítulos, apartados y subapartados, debe estar de acuerdo con la Norma
+    UNE 50132 [véase 5.2.4].
+    
+    La información dada en el núcleo del informe no debería ser demasiado detallada. Las descripciones de la teoría,
+    métodos y resultados deberían ser suficientes para que un especialista en la materia reproduzca las etapas de la
+    investigación sin dificultad especial. Si se requieren pruebas matemáticas o detalles completos del procedimiento
+    experimental estos deberían presentarse en los anexos. Debería destacarse la importancia del trabajo nuevo con sólo
+    una breve descripción o referencia a las técnicas o equipos convencionales.
+    
+    Todas las ilustraciones y tablas esenciales para la comprensión del texto principal deberían incluirse en el núcleo del
+    informe y deben colocarse como se indica en 11.2 y 11.3 [véase, no obstante, 8.2.2].
+    
+    Se puede añadir un capítulo independientemente para la discusión de los nuevos aspectos del trabajo descrito y que
+    interprete o comente los resultados y el razonamiento sobre el que se fundamentan las conclusiones y recomenda-
+    ciones del informe.
+}
+
+\newcommand{\Objeto}{
+    \section{Objeto}
+}
+\newcommand{\normas}{
+    \section{Normas y Referencias Aplicables}
+
+}
+\newcommand{\teoria}{
+    \section{Teoría,}
+
+}
+\newcommand{\Metodologia}{
+    \section{Metodología}
+
+}
+
+\newcommand{\resultados}{
+    \section{Resultados}
+}
+
+\newcommand{\ConclusionesYRecomendaciones}{
+    \section{Conclusiones y recomendaciones}
+    Las conclusiones deben ser el reflejo claro y ordenado de las deducciones hechas como consecuencia del trabajo
+    descrito en el núcleo del informe. Pueden incluirse datos cuantitativos pero no deberían darse detalles de ningún
+    argumento o resultado.
+    Las recomendaciones son manifestaciones concisas de alguna acción futura que parezca necesaria como resultado
+    directo de las conclusiones alcanzadas o de alguna experiencia realizada en el curso del trabajo objeto del informe.
+    No son necesarias a no ser que estén completamente justificadas por el trabajo descrito. En la mayor parte de los
+    informes las conclusiones y las recomendaciones deberían combinarse en un único capítulo final. Si existe un gran
+    número de recomendaciones, pueden constituir un capítulo independiente.
+    El capítulo (o capítulos) de conclusiones y recomendaciones no forma(n) parte del núcleo del informe y no necesita
+    llevar numeración de capítulo.
+}
+
+
+
+\newcommand{\Agradecimientos}{
+    \section{Agradecimientos}
+}
+
+\newcommand{\Referencias}{
+    \section{Lista de referencias}
+}
+\newcommand{\IlustracionesOTablasSuplementarias}{
+
+    \section{Ilustraciones o tablas suplementarias. }
+    Las figuras o tablas suplementarias, que no se necesitan para una
+    comprensión inmediata del texto, pero que proporcionan ejemplos complementarios deberían colocarse en anexos.
+    
+    Debería recordarse, sin embargo, que esta utilización no debe ser un pretexto para presentar cada uno de los con-
+    juntos de datos obtenidos en una experiencia.
+    
+    También es posible que algunas ilustraciones o tablas no se incluyan en el informe, pero deberían registrarse con
+    indicación del editor, del centro de documentación o de la organización competente, en la que están disponibles.
+
+}
+\newcommand{\MaterialExcepcional}{
+    \section{Material excepcional. }
+    Algunos documentos no pueden incorporarse fácilmente en el cuerpo del informe por
+ser demasiado grandes (algunas ilustraciones y tablas, por ejemplo) o debido a que están reproducidos de una ma-
+nera diferente al informe (por ejemplo, mapas especiales, fotografías originales o microfichas). Ese material puede
+manejarse más fácilmente si se trata como anexo.
+}
+
+
+
+\newcommand{\Bibliografia}{
+    \section{Bibliografía. }
+    Algunos documentos no pueden incorporarse fácilmente en el cuerpo del informe por
+ser demasiado grandes (algunas ilustraciones y tablas, por ejemplo) o debido a que están reproducidos de una ma-
+nera diferente al informe (por ejemplo, mapas especiales, fotografías originales o microfichas). Ese material puede
+manejarse más fácilmente si se trata como anexo.
+}
+
+\newcommand{\DescripcionDeEquiposTecnicasOProgramasDeOrdenador}{
+    \section{Descripción de equipos, técnicas o programas de ordenador.}
+    Algunos documentos no pueden incorporarse fácilmente en el cuerpo del informe por
+ser demasiado grandes (algunas ilustraciones y tablas, por ejemplo) o debido a que están reproducidos de una ma-
+nera diferente al informe (por ejemplo, mapas especiales, fotografías originales o microfichas). Ese material puede
+manejarse más fácilmente si se trata como anexo.
+}
+
+
+\newcommand{\hojadedatosdeldocumento}{
+    \newpage
+    \begin{multicols}{2}
+[\section*{Hoja de datos del documento}]
+Codigo de documento \\
+\TextField[multiline=true, bordercolor=gray!30,name=beee,width=0.499\textwidth,height=.5 cm,default=]{}
+Fecha de emisión\\
+\TextField[multiline=true, bordercolor=gray!30,name=beee,width=0.499\textwidth,height=.5 cm,default=]{}
+
+\Proyecto
+\Proyectista
+\Instalacion
+\Promotor
+\end{multicols}
+\begin{multicols}{3}
+\end{multicols}
+
+
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% al principio del documento incluira python los newcommands calculados
+\input{../../../assets/settings/newcommand.tex}
+
+
+% marca_para_newcommands_desde_el_scripot_de_pythone_specifico
+\documentclass[a4paper,12pt]{report}
+% documento segun norma UNE 50135 Presentación de informes científicos y técnicos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+% hay que usar para que no den error las flechas de draw, pero antes del tikz
+% \shorthandoff{<} % Desactiva el uso de < como comando
+% \shorthandoff{>} % Desactiva el uso de < como comando
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+\usepackage{amsmath} % For mathematical equations
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage{qrcode}
+\usepackage{float}
+
+% 
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+
+% % \let\OldTextField\TextField
+% % \renewcommand{\TextField}[2][]{%
+% %   \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+% % }
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+% \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+% \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+% \setstretch{1.5}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{Form}
+\graphicspath{{../../../assets/imgs}}
+ % PARTE  INICIAL   
+\figuraDatosCSV
+\cubierta
+\portada
+% \maketitle
+\resumen
+\tableofcontents
+% \glosario % no obligatoio
+% \prefacio % no obligatoio
+{\chapter{Informe}
+% CUERPO DEL INFORME
+\Introduccion
+{% nucleo DEL INFORME
+\NucleoDelInformeConIlustracionesYTablas
+\Objeto
+\normas
+\teoria
+\Metodologia
+\resultados
+}
+% \Recomendaciones % No obligatorio
+% \Agradecimientos  % No obligatorio
+\ConclusionesYRecomendaciones
+\Referencias
+}
+
+
+\appendix
+{\chapter{Anexos} % PARTE FINAL
+\IlustracionesOTablasSuplementarias
+\MaterialExcepcional
+\Bibliografia
+\DescripcionDeEquiposTecnicasOProgramasDeOrdenador
+\hojadedatosdeldocumento
+}
+
+
+
+
+
+
+% \pgfplotstableread[col sep=comma]{
+%     Nombre dd dasdAS Asdas,Color,Forma
+%     Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
+%     Plátano,Amarillo,Alargada
+%     Uva,Morado,Pequeña
+%     Limón,Verde,Ovalada
+%     Naranja,Naranja,Redonda
+% }\datosNoNumericos
+% \begin{table}[ht]
+%     \centering
+%     \caption{Una Tabla de ejemplo}
+%     \pgfplotstabletypeset[
+%         col sep=comma,
+%         every head row/.style={before row=\toprule, after row=\midrule},
+%         every last row/.style={after row=\bottomrule},
+%         string type % Indica que los datos son cadenas de texto
+%     ]{\datosNoNumericos}
+% \end{table}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8\linewidth]{fvresidencial.jpg} % Ajusta la ruta y el tamaño según tus necesidades
+%     \caption{Emplazamiento geográfico.}
+%     \label{fig:etiqueta}
+% \end{figure}
+
+
+
+
+
+
+
+
+% \newpage
+% \section*{Bibliografía}
+% \begin{itemize}
+%     \item \href{https://www.ree.es/es/clientes/generador/gestion-medidas-electricas/consulta-perfiles-de-consumo}{REE. Consulta los perfiles de consumo (TBD)}
+%     \item Norma UNE XXXX: Año. Título de la norma.
+% \end{itemize}
+
+
+
+% marca_para_cambiar_el_preambulo_de_todos_los_documentos
+\end{Form}
+\end{document}
+

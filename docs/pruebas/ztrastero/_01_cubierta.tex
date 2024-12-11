@@ -1,0 +1,102 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{qrcode}
+
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+
+\pagestyle{empty} % Sin numeración de página
+
+% Configuración del título
+\titleformat{\section}[block]{\large\bfseries\centering}{}{0pt}{} % Centra y da estilo
+
+\begin{document}
+
+% Dibujar elementos superpuestos con TikZ
+\begin{tikzpicture}[remember picture, overlay]
+    % Línea negra vertical centrada en la página
+    \draw[line width=4mm, gray!80]  ([xshift=-6cm]current page.north) -- ([xshift=-6cm]current page.south);
+    % Línea negra horizontal centrada en la página
+    \draw[line width=40mm, gray!30] ([yshift=10cm]current page.west) -- ([yshift=10cm]current page.east);
+
+     % Inserta aquí el enlace o texto que desees codificar
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[line width=14mm,white] ([xshift=4.5cm, yshift=24.8cm]current page.south west) circle (2.5cm); % Dibuja un círculo con radio de 1cm
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=2.80cm, yshift=24.0cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \textcolor{gray}{{\textbf{ \scalebox{4.5}{$\mathcal{RG}$}}}}
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=15cm, yshift=24cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \textbf{ELTON-TadADS-54} \\ 
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[remember picture, overlay]
+    
+    \node[anchor=south west] at ([xshift=15cm, yshift=24cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \textbf{ELTON-TadADS-54} \\ 
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=5cm, yshift=5cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \textbf{ELTON-TadADS-54} \\ 
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=7cm, yshift=17cm]current page.south west) {%
+        \begin{minipage}{11cm} 
+            \textbf{\huge ELECTRONIC TONING LABORATORY} \\[2em]
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=5cm, yshift=1cm]current page.south west) {%
+        \begin{minipage}{6cm} 
+            \qrcode{https://www.example.com}
+        \end{minipage}
+    };
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west] at ([xshift=8cm, yshift=1cm]current page.south west) {%
+        \begin{minipage}{11cm} 
+            { \copyright{} 
+            Copyright 2025 por \autor, todos los derechos reservados.  
+            Prohibido reproducir total o parcialmente este documento sin el consentimiento del autor.}
+        \end{minipage}
+    };
+\end{tikzpicture}
+
+\vfill
+
+% Pie de página
+\noindent
+
+
+\end{document}

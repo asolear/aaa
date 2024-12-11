@@ -1,0 +1,213 @@
+\input{../../../assets/settings/newcommand.tex}
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+% hay que usar para que no den error las flechas de draw, pero antes del tikz
+% \shorthandoff{<} % Desactiva el uso de < como comando
+% \shorthandoff{>} % Desactiva el uso de < como comando
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+\usepackage{amsmath} % For mathematical equations
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+\usepackage{glossaries} % Paquete para glosarios
+\usepackage{forest}
+\usepackage{ulem}
+\usepackage{pythontex}
+
+% 
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+\setstretch{1.5}
+\graphicspath{{../../../assets/imgs}}
+
+
+\begin{document}
+\begin{Form}
+
+
+
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE  \par}
+    \vspace{1cm}
+    {\Huge\bfseries Informe Técnico\par}
+    \vspace{2cm}
+    {\Large DETERMINACIÓN DE LA CAPACIDAD DISPONIBLE POR UN CONSUMIDOR
+    DOMÉSTICO PARA REALIZAR LA RECARGA DEL VE SIN AMPLIAR LA POTENCIA\par}
+    \vspace{1cm}
+    % \includegraphics[width=0.4\textwidth]{logo.png}\par
+    \vfill
+    Autor: \TextField[name=Tecnico,width=6cm,default=Juan Pérez]{} \par
+    Organización: \TextField[name=Organizacion,width=6cm,default=CalcAE]{} \par
+    NIF: \TextField[name=NIF,width=6cm,default=12345678]{} \par
+    Fecha:  NIF: \TextField[name=Fecha,width=6cm,default=\today]{} \par
+\end{titlepage}
+% Configuración del glosario
+
+\begin{abstract}
+  El texto del resumen debe estar de acuerdo con la Norma UNE 50103. En síntesis, debe ser tan informativo como lo
+  permita la naturaleza del documento, para que los lectores puedan decidir si es necesario leer el documento completo;
+  debe definir el objetivo, métodos, resultados y conclusiones presentadas en el documento original, bien en ese orden,
+  o destacando inicialmente los resultados y conclusiones; debe constituir un texto completo, para que sea inteligible sin
+  necesidad de referirse al documento. Debe ser conciso sin ser oscuro, reteniendo la información básica y el carácter
+  del documento original. Los resúmenes de la mayoría de los informes deben tener menos de 250 palabras y en ningún
+  caso más de 500; Deben estar escritos en un solo párrafo; emplear normalmente frases completas, verbos en forma
+  activa y con tercera persona. No se deben utilizar figuras y símbolos, tales como tablas cortas y fórmulas, más que
+  cuando no haya ninguna alternativa aceptable.\end{abstract}
+
+\tableofcontents
+
+\section*{Glosario de términos}
+
+\begin{description}
+  \item[LaTeX] Sistema de preparación de documentos basado en texto, utilizado para crear documentos de alta calidad tipográfica.
+  \item[PDF] Formato de archivo para documentos que preserva el formato y es independiente del software, hardware o sistema operativo utilizado.
+  \item[UNE] Normas técnicas desarrolladas por la Asociación Española de Normalización y Certificación.
+  \item[HTML] Lenguaje de marcado utilizado para la creación de páginas web.
+  \item[CSS] Lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML.
+  \item[XML] Lenguaje de marcado que define reglas para la codificación de documentos en un formato legible por humanos y máquinas.
+\end{description}
+
+
+\newpage
+
+\section{Introducción}
+En esta sección se describe el propósito del documento y su alcance. También se puede incluir información general y antecedentes necesarios para entender el contenido.
+
+\section{Objeto y Campo de Aplicación}
+Definir de forma clara y concisa el propósito principal del documento y los límites de su aplicación.
+
+\section{Normas y Referencias Aplicables}
+Enumerar las normas, reglamentos y documentos de referencia utilizados.
+
+
+\section{Metodología}
+Describir el método o procedimiento seguido. Esto debe estar en concordancia con los estándares aplicables.
+
+\section{Resultados}
+Exponer los resultados obtenidos. Utiliza tablas o gráficos si es necesario.
+
+\section{Conclusiones y Recomendaciones}
+Presentar las conclusiones principales y sugerir posibles acciones o estudios futuros.
+
+\section{Referencias}
+Libro: PETTERSEN, Sverre. Introduction to Meteorology. New York, MacGraw Hill, 1941: pp. 200-210.
+
+
+\appendix
+\section{Anexos}
+En esta sección se incluyen tablas, gráficos, cálculos o documentos adicionales que complementan el contenido principal.
+
+\subsection{Ilustraciones o tablas suplementarias.}
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+
+
+\pgfplotstableread[col sep=comma]{
+    Nombre dd dasdAS Asdas,Color,Forma
+    Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
+    Plátano,Amarillo,Alargada
+    Uva,Morado,Pequeña
+    Limón,Verde,Ovalada
+    Naranja,Naranja,Redonda
+}\datosNoNumericos
+
+\begin{table}[ht]
+    \centering
+    \caption{Una Tabla de ejemplo}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+
+\subsection{Descripción de equipos, técnicas o programas de ordenador..}
+
+
+
+
+
+
+El operador del sistema (Red Eléctrica de España), calcula y publica regularmente las medidas de la demanda del
+sistema eléctrico peninsular y los perfiles finales de consumo. Gracias al proyecto perfila, estos perfiles de consumo
+aplicables a los consumidores domésticos se han podido determinar con precisión.
+
+En base a esta información, y con el objetivo de poder estimar de una manera razonable y robusta el margen de
+capacidad libre o “hueco” que tendrían los consumidores domésticos para realizar la cargar nocturna del VE, se han
+tomado los valores máximos para cada periodo horario del coeficiente de perfilado A publicado por REE durante el
+año 2015. Estos valores, ajustados en base 100 para el valor máximo de dicho coeficiente horario, han sido
+representados en la siguiente gráfica
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fvresidencial.jpg} % Ajusta la ruta y el tamaño según tus necesidades
+    \caption{Emplazamiento geográfico.}
+    \label{fig:etiqueta}
+  \end{figure}
+
+
+De esta manera, se obtiene el ratio horario de uso de la capacidad disponible por un consumidor doméstico.
+Suponiendo que los VE fuera programados para que iniciaran su carga a partir de la 1 de la mañana (hora de inicio
+de la tarifa de acceso supervalle, que coincide además con los precios más bajos de la energía en el mercado), un
+consumidor doméstico tendría disponible en un escenario de máxima demanda para esta hora, prácticamente el
+50\% de su capacidad de punta para poder realizar esta recarga.
+
+En caso el de que se comprobara que los VE conectados a los puntos de recarga de las viviendas no realizan en su
+mayoría una recarga lenta a partir de esta hora, este coeficiente debería ser recalculado.
+
+
+\end{Form}
+\end{document}

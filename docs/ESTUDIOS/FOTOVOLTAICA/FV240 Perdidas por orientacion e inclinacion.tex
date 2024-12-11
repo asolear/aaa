@@ -1,0 +1,223 @@
+\input{../../../assets/settings/newcommand.tex}
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+% hay que usar para que no den error las flechas de draw, pero antes del tikz
+% \shorthandoff{<} % Desactiva el uso de < como comando
+% \shorthandoff{>} % Desactiva el uso de < como comando
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+\usepackage{amsmath} % For mathematical equations
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+
+% 
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+\setstretch{1.5}
+\begin{document}
+\begin{Form}
+
+
+
+
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE CalcAE \par}
+    \vspace{1cm}
+    {\Huge\bfseries Informe Técnico\par}
+    \vspace{2cm}
+    {\Large Norma UNE XXXX: Año \par}
+    \vspace{1cm}
+    % \includegraphics[width=0.4\textwidth]{logo.png}\par
+    \vfill
+    Autor: \TextField[name=Tecnico,width=6cm,default=Juan Pérez]{} \par
+    Organización: \TextField[name=Organizacion,width=6cm,default=CalcAE]{} \par
+    NIF: \TextField[name=NIF,width=6cm,default=12345678]{} \par
+    Fecha:  NIF: \TextField[name=Fecha,width=6cm,default=\today]{} \par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+En esta sección se describe el propósito del documento y su alcance. También se puede incluir información general y antecedentes necesarios para entender el contenido.
+
+\section{Objeto y Campo de Aplicación}
+Definir de forma clara y concisa el propósito principal del documento y los límites de su aplicación.
+
+\section{Normas y Referencias Aplicables}
+Enumerar las normas, reglamentos y documentos de referencia utilizados.
+
+\section{Definiciones y Abreviaturas}
+Listar y definir términos importantes o abreviaturas empleadas en el documento.
+
+\section{Metodología}
+Describir el método o procedimiento seguido. Esto debe estar en concordancia con los estándares aplicables.
+
+\section{Resultados}
+Exponer los resultados obtenidos. Utiliza tablas o gráficos si es necesario.
+
+\section{Conclusiones y Recomendaciones}
+Presentar las conclusiones principales y sugerir posibles acciones o estudios futuros.
+
+\appendix
+\section{Anexos}
+En esta sección se incluyen tablas, gráficos, cálculos o documentos adicionales que complementan el contenido principal.
+
+
+\subsection{graficos}
+
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+
+
+\pgfplotstableread[col sep=comma]{
+    Nombre dd dasdAS Asdas,Color,Forma
+    Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
+    Plátano,Amarillo,Alargada
+    Uva,Morado,Pequeña
+    Limón,Verde,Ovalada
+    Naranja,Naranja,Redonda
+}\datosNoNumericos
+
+\begin{table}[ht]
+    \centering
+    \caption{Una Tabla de ejemplo}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+\subsection{Perdidas por orientacion e inclinacion}
+
+\begin{center}
+
+\begin{tikzpicture}
+
+    % Escalar todo el dibujo
+    \begin{scope}[scale=0.5]
+        \def\L{5} % Longitud de la recta
+        \def\theta{30} % Ángulo de la recta en grados
+    
+        % Dibujar el suelo
+        \draw[thick] (-1, 0) -- (6, 0) ;
+        
+        % Dibujar el módulo inclinado
+        \draw[thick] (0, 0) -- ({\L*cos(\theta)}, {\L*sin(\theta)});
+        
+        % Dibujar el ángulo beta
+        \draw[color=red] (1, 0) arc[start angle=0, end angle=\theta, radius=1];
+        \node[color=red] at (1.3, -0.5) {$\beta$};
+        
+        % Añadir etiquetas y dimensiones
+        \node[above] at (1.5, 1.5) {Perfil del módulo};
+    \end{scope}
+    
+    \end{tikzpicture}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\shorthandoff{<} % Desactiva el uso de < como comando
+\shorthandoff{>} % Desactiva el uso de < como comando
+\begin{tikzpicture}
+
+    % Escalar todo el dibujo
+    \begin{scope}[scale=0.5]
+    % Dibujar las flechas de dirección
+    \draw[thick, ->] (0, 0) -- (0, 3) node[above] {N}; % Flecha hacia el Norte
+    \draw[thick, ->] (0, 0) -- (0, -3) node[below] {S}; % Flecha hacia el Sur
+    \draw[thick, ->] (0, 0) -- (3, 0) node[right] {E}; % Flecha hacia el Este
+    \draw[thick, ->] (0, 0) -- (-3, 0) node[left] {O}; % Flecha hacia el Oeste
+    
+    % Dibujar el teclado inclinado
+    \begin{scope}[rotate=45]
+        \draw[thick] (-1.5, -0.75) rectangle (1.5, 0.75);
+        \foreach \x in {-1.2, -0.8, -0.4, 0, 0.4, 0.8, 1.2} {
+            \draw (\x, -0.65) -- (\x, 0.65);
+        }
+        \foreach \y in {-0.45, -0.15, 0.15, 0.45} {
+            \draw (-1.4, \y) -- (1.4, \y);
+        }
+    \end{scope}
+    
+    % Dibujar el ángulo alpha
+    \draw[->] (0,0) -- (-90+45:2);
+    
+    \draw[color=red]  (0, -1.5) arc[start angle=-90, end angle=-90+45, radius=1.5];
+    \node[color=red]  at (0.3, -2) {$\alpha$};
+    
+    % Añadir etiquetas y dimensiones
+    \node[below left] at (-2.5, -2.5) {Fig. 2};
+\end{scope}
+
+    \end{tikzpicture}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{center}
+
+
+
+\newpage
+\section*{Bibliografía}
+\begin{itemize}
+    \item Título del libro/artículo/documento. Autor(es). Año.
+    \item Norma UNE XXXX: Año. Título de la norma.
+\end{itemize}
+
+
+
+
+\end{Form}
+\end{document}

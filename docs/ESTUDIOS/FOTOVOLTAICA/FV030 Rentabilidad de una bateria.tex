@@ -1,0 +1,260 @@
+\input{../../../assets/settings/newcommand.tex}
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+\usepackage{amsmath} % For mathematical equations
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+
+% 
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+\setstretch{1.5}
+\begin{document}
+\begin{Form}
+
+
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE CalcAE \par}
+    \vspace{1cm}
+    {\Huge\bfseries Informe Técnico\par}
+    \vspace{2cm}
+    {\Large Rentabilidad de una batería \par}
+    \vspace{1cm}
+    % \includegraphics[width=0.4\textwidth]{logo.png}\par
+    \vfill
+    Autor: \TextField[name=Tecnico,width=6cm,default=Juan Pérez]{} \par
+    Organización: \TextField[name=Organizacion,width=6cm,default=CalcAE]{} \par
+    NIF: \TextField[name=NIF,width=6cm,default=12345678]{} \par
+    Fecha:  NIF: \TextField[name=Fecha,width=6cm,default=\today]{} \par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+En esta sección se describe el propósito del documento y su alcance. También se puede incluir información general y antecedentes necesarios para entender el contenido.
+
+\section{Objeto y Campo de Aplicación}
+Definir de forma clara y concisa el propósito principal del documento y los límites de su aplicación.
+
+\section{Normas y Referencias Aplicables}
+Enumerar las normas, reglamentos y documentos de referencia utilizados.
+
+\section{Definiciones y Abreviaturas}
+Listar y definir términos importantes o abreviaturas empleadas en el documento.
+
+\section{Metodología}
+Describir el método o procedimiento seguido. Esto debe estar en concordancia con los estándares aplicables.
+
+\section{Resultados}
+Exponer los resultados obtenidos. Utiliza tablas o gráficos si es necesario.
+
+\section{Conclusiones y Recomendaciones}
+Presentar las conclusiones principales y sugerir posibles acciones o estudios futuros.
+
+\appendix
+\section{Anexos}
+En esta sección se incluyen tablas, gráficos, cálculos o documentos adicionales que complementan el contenido principal.
+
+
+\subsection{graficos}
+
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+
+
+\pgfplotstableread[col sep=comma]{
+    Nombre dd dasdAS Asdas,Color,Forma
+    Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
+    Plátano,Amarillo,Alargada
+    Uva,Morado,Pequeña
+    Limón,Verde,Ovalada
+    Naranja,Naranja,Redonda
+}\datosNoNumericos
+
+\begin{table}[ht]
+    \centering
+    \caption{Una Tabla de ejemplo}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+\newpage
+\section*{Bibliografía}
+\begin{itemize}
+    \item Título del libro/artículo/documento. Autor(es). Año.
+    \item Norma UNE XXXX: Año. Título de la norma.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{rentabilidad de una batería}
+
+
+
+Para determinar la rentabilidad de una batería de 1 kWh con una vida útil de 6000 ciclos, seguimos el mismo proceso de cálculo:
+
+Costo de carga por ciclo:
+
+Capacidad de la batería: 1 kWh
+
+Costo de carga por kWh: 0.07 euros/kWh
+
+Costo de carga por ciclo
+=
+1
+x
+kWh
+×
+0.07
+x
+euros/kWh
+=
+0.07
+x
+euros
+
+Costo de carga por ciclo=1kWh×0.07euros/kWh=0.07euros
+Ingreso de descarga por ciclo:
+
+
+Capacidad de la batería: 1 kWh
+
+Ingreso de descarga por kWh: 0.15 euros/kWh
+
+Ingreso de descarga por ciclo
+=
+1
+x
+kWh
+×
+0.15
+x
+euros/kWh
+=
+0.15
+x
+euros
+
+Ingreso de descarga por ciclo=1kWh×0.15euros/kWh=0.15euros
+
+Beneficio neto por ciclo:
+
+Ingreso de descarga por ciclo: 0.15 euros
+
+Costo de carga por ciclo: 0.07 euros
+
+Beneficio neto por ciclo
+=
+0.15
+x
+euros
+
+0.07
+x
+euros
+=
+0.08
+x
+euros
+
+Beneficio neto por ciclo=0.15euros-0.07euros=0.08euros
+
+Beneficio total durante la vida útil de la batería:
+
+Número de ciclos: 6000 ciclos
+Beneficio neto por ciclo: 0.08 euros
+Beneficio total
+=
+6000
+x
+ciclos
+×
+0.08
+x
+euros/ciclo
+=
+480
+x
+euros
+
+
+
+Beneficio total=6000ciclos×0.08euros/ciclo=480euros
+
+$2 \times 3$ = 
+
+\subsubsection*{Resumen}
+
+%{%
+a=3
+b=2
+print(a*b)
+
+%}%
+
+La rentabilidad total de una batería de 1 kWh durante su vida útil de 6000 ciclos es de 480 euros. Este valor representa el beneficio neto que se obtiene al cargar la batería a 0.07 euros/kWh y descargarla a 0.15 euros/kWh.
+
+
+
+
+
+\end{Form}
+\end{document}

@@ -1,0 +1,228 @@
+\input{../../../assets/settings/newcommand.tex}
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+% hay que usar para que no den error las flechas de draw, pero antes del tikz
+% \shorthandoff{<} % Desactiva el uso de < como comando
+% \shorthandoff{>} % Desactiva el uso de < como comando
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+\usepackage{amsmath} % For mathematical equations
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+
+% 
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.1ex}{\OldTextField[height=.95em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\geometry{left=3cm, right=2.5cm, top=3cm, bottom=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+\setstretch{1.5}
+\begin{document}
+\begin{Form}
+
+
+
+
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE CalcAE \par}
+    \vspace{1cm}
+    {\Huge\bfseries Informe Técnico\par}
+    \vspace{2cm}
+    {\Large Norma UNE XXXX: Año \par}
+    \vspace{1cm}
+    % \includegraphics[width=0.4\textwidth]{logo.png}\par
+    \vfill
+    Autor: \TextField[name=Tecnico,width=6cm,default=Juan Pérez]{} \par
+    Organización: \TextField[name=Organizacion,width=6cm,default=CalcAE]{} \par
+    NIF: \TextField[name=NIF,width=6cm,default=12345678]{} \par
+    Fecha:  NIF: \TextField[name=Fecha,width=6cm,default=\today]{} \par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+En esta sección se describe el propósito del documento y su alcance. También se puede incluir información general y antecedentes necesarios para entender el contenido.
+
+\section{Objeto y Campo de Aplicación}
+Definir de forma clara y concisa el propósito principal del documento y los límites de su aplicación.
+
+\section{Normas y Referencias Aplicables}
+Enumerar las normas, reglamentos y documentos de referencia utilizados.
+
+\section{Definiciones y Abreviaturas}
+Listar y definir términos importantes o abreviaturas empleadas en el documento.
+
+\section{Metodología}
+Describir el método o procedimiento seguido. Esto debe estar en concordancia con los estándares aplicables.
+
+\section{Resultados}
+Exponer los resultados obtenidos. Utiliza tablas o gráficos si es necesario.
+
+\section{Conclusiones y Recomendaciones}
+Presentar las conclusiones principales y sugerir posibles acciones o estudios futuros.
+
+\appendix
+\section{Anexos}
+En esta sección se incluyen tablas, gráficos, cálculos o documentos adicionales que complementan el contenido principal.
+
+
+\subsection{graficos}
+
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+
+
+\pgfplotstableread[col sep=comma]{
+    Nombre dd dasdAS Asdas,Color,Forma
+    Manzana,Rojo,{\TextField[name=Tecnico,width=2cm,default=Juan Pérez]{}}
+    Plátano,Amarillo,Alargada
+    Uva,Morado,Pequeña
+    Limón,Verde,Ovalada
+    Naranja,Naranja,Redonda
+}\datosNoNumericos
+
+\begin{table}[ht]
+    \centering
+    \caption{Una Tabla de ejemplo}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+\newpage
+\section*{Bibliografía}
+\begin{itemize}
+    \item Título del libro/artículo/documento. Autor(es). Año.
+    \item Norma UNE XXXX: Año. Título de la norma.
+\end{itemize}
+
+
+
+
+La distancia d, medida sobre la horizontal, entre filas de módulos o entre una fila y un obstáculo
+de altura h que pueda proyectar sombras, se recomienda que sea tal que se garanticen al menos
+4 horas de sol en torno al mediodía del solsticio de invierno.
+En cualquier caso, d ha de ser como mínimo igual a $h \cdot k$,, siendo k un factor adimensional al que,
+en este caso, se le asigna el valor $1/\tan(61°- latitud)$.
+En la tabla pueden verse algunos valores significativos del factor k, en función de la latitud
+del lugar.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Latitud} & \textbf{29\textdegree} & \textbf{37\textdegree} & \textbf{39\textdegree} & \textbf{41\textdegree} & \textbf{43\textdegree} & \textbf{45\textdegree} \\ \hline
+        $k$ & 1,600 & 2,246 & 2,475 & 2,747 & 3,078 & 3,487 \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Asimismo, la separación entre la parte posterior de una fila y el comienzo de la siguiente no será
+inferior a $h \cdot k$, siendo en este caso h la diferencia de alturas entre la parte alta de una fila y la
+parte baja de la posterior, efectuándose todas las medidas con relación al plano que contiene las
+bases de los módulos.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\shorthandoff{<} % Desactiva el uso de < como comando
+\shorthandoff{>} % Desactiva el uso de < como comando
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        % Definir coordenadas y ángulos
+        \def\d{3} % distancia horizontal
+        \def\h{2} % altura
+        \def\angle{120} % ángulo de inclinación de las placas
+        \def\length{1.5} % longitud de las placas
+
+       % Dibujar el suelo y plataformas con rayado
+    %    \fill[pattern=north east lines] (-2,-0.5) rectangle (10,0);
+    \fill[color=gray](0,0) -- (0,1) -- (\d,1) -- (\d,0) -- cycle;
+    \fill[color=gray] (\d,0) -- (\d,.5) -- (\d*2,.5) -- (\d*2,0) -- cycle;
+    \fill[color=gray] (\d+\d,0) -- (\d+\d,1.5) -- (\d+\d+\d,1.5) -- (\d+\d+\d,0) -- cycle;
+
+        % Definir la geometría de una placa fotovoltaica
+        \begin{scope}[shift={(0.5,1)}, rotate=\angle]
+            \draw[thick, fill=gray!30] (0,0) rectangle (\length,0.2);
+        \end{scope}
+
+        % Duplicar y rotar la geometrí$ de la placa fotovoltaica
+        \begin{scope}[shift={(\d+1,\h-1.5)}, rotate=\angle]
+            \draw[thick, fill=gray!30] (0,0) rectangle (\length,0.2);
+        \end{scope}
+
+        % Dibujar líneas de medición y etiquetas
+        \draw[<->,thick] (0.5,-.2) -- node[below,fill=white] {$d_2$} ++(\d-.5,0);
+        \draw[<->,thick] (\d+1,-.2) -- node[below,fill=white] {$d_1$} ++(\d-1,0);
+        
+        % \draw[dashed] (\d+\d, .5) -- (\d+\d,.5);  % Línea auxiliar para mostrar h
+        \draw[<->,thick] (\d+\d-.2,1.5) -- node[fill=white, left] {$h_1$} ++(0,-1);
+
+        \draw[<->,thick] (\d-.2,1) -- node[fill=white, left] {$h_2$} ++(0,.8);
+
+        % Etiquetas de las figuras
+        \node at (5,-1.5) {Fig. 7};
+    \end{tikzpicture}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Si los módulos se instalan sobre cubiertas inclinadas, en el caso de que el azimut de estos, el de
+la cubierta, o el de ambos, difieran del valor cero apreciablemente, el cálculo de la distancia
+entre filas deberá efectuarse mediante la ayuda de un programa de sombreado para casos
+generales suficientemente fiable, a fin de que se cumplan las condiciones requeridas.
+
+
+\end{Form}
+\end{document}

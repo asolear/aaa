@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\pgfplotstableread{
+    x   y
+    1   2
+    2   3
+    3   5
+    4   7
+}\datatable
+
+% Graficar los datos
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Eje X},
+        ylabel={Eje Y},
+        title={Ejemplo de pgfplots con tabla},
+        grid=major
+    ]
+        \addplot table[x=x, y=y] {\datatable};
+    \end{axis}
+\end{tikzpicture}
+
+
+% Datos no numéricos
+\pgfplotstableread[col sep=comma]{
+    Característica, Este-Oeste, Incl. Óptima, Horizontal, Sur con Incl. Óptima
+    Producción de Energía, Media, Alta, Baja, Muy Alta
+    Uso del Espacio, Alto, Medio, Alto, Medio
+    Sombra, Baja, Media, N/A, Alta
+    Facilidad de Instalación, Media, Baja, Alta, Baja
+    Coste de Instalación, Alta, Baja, Alta, Media
+    Resistencia al Viento, Media, Alta, Media, Media
+    Mantenimiento, Media, Media, Alta, Media
+    Distribución de Producción, Uniforme en día, Pico al mediodía, Baja, Pico al mediodía
+    Estética e Integración, Media, Alta, Baja, Media
+}\datosNoNumericos
+
+% Tabla con datos no numéricos
+\begin{table}[ht]
+    \centering
+    \caption{Comparativa de Alternativas para la Disposición de Paneles Solares en la Cubierta}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+\end{document}

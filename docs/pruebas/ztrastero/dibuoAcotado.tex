@@ -1,0 +1,47 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{amsmath}
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}    % Soporte para caracteres con acentos
+\usepackage{textcomp}       % Soporte adicional para símbolos
+\usepackage{circuitikz}
+\usepackage[spanish,safe]{babel}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{setspace}
+\usepackage{tikz} % Para diagramas
+
+\begin{document}
+
+\shorthandoff{<} % Desactiva el uso de < como comando
+\shorthandoff{>} % Desactiva el uso de < como comando
+
+\begin{tikzpicture}
+    % Dibujar el rectángulo
+    \draw[thick] (0,0) rectangle (5,3);
+
+    % Etiquetas de las cotas (horizontal)
+    \draw[<->, thick] (0,-0.5) -- node[below]{5 cm} (5,-0.5);
+
+    % Etiquetas de las cotas (vertical)
+    \draw[<->, thick] (-0.5,0) -- node[left]{3 cm} (-0.5,3);
+
+    % Etiqueta interna (diagonal)
+    \draw[<->, dashed] (0,0) -- node[above, sloped]{Diagonal: $\sqrt{5^2 + 3^2}$} (5,3);
+    
+    % Agregar nombres de puntos (opcional)
+    \node[below left] at (0,0) {A};
+    \node[below right] at (5,0) {B};
+    \node[above right] at (5,3) {C};
+    \node[above left] at (0,3) {D};
+\end{tikzpicture}
+
+\end{document}
